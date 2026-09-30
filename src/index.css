@@ -44,3 +44,41 @@ body { margin: 0; background: var(--bg); color: var(--ink); }
 
 button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .row { transition: none; } }
+
+/* --- due date, categories, stats --- */
+:root {
+  --yl-bg: #fef9c3; --yl-fg: #854d0e;
+  --c-work-bg: #dbeafe; --c-work-fg: #1e40af;
+  --c-personal-bg: #ede9fe; --c-personal-fg: #5b21b6;
+  --c-shopping-bg: #fce7f3; --c-shopping-fg: #9d174d;
+  --c-health-bg: #ccfbf1; --c-health-fg: #115e59;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --yl-bg: #713f12; --yl-fg: #fef08a;
+    --c-work-bg: #1e3a8a; --c-work-fg: #bfdbfe;
+    --c-personal-bg: #4c1d95; --c-personal-fg: #ddd6fe;
+    --c-shopping-bg: #831843; --c-shopping-fg: #fbcfe8;
+    --c-health-bg: #134e4a; --c-health-fg: #99f6e4;
+  }
+}
+:root[data-theme="dark"] {
+  --yl-bg: #713f12; --yl-fg: #fef08a;
+  --c-work-bg: #1e3a8a; --c-work-fg: #bfdbfe;
+  --c-personal-bg: #4c1d95; --c-personal-fg: #ddd6fe;
+  --c-shopping-bg: #831843; --c-shopping-fg: #fbcfe8;
+  --c-health-bg: #134e4a; --c-health-fg: #99f6e4;
+}
+.d-overdue { background: var(--hi-bg); color: var(--hi-fg); }
+.d-today { background: var(--yl-bg); color: var(--yl-fg); }
+.d-normal { background: var(--bg); color: var(--mute); border: 1px solid var(--line); }
+.c-work { background: var(--c-work-bg); color: var(--c-work-fg); }
+.c-personal { background: var(--c-personal-bg); color: var(--c-personal-fg); }
+.c-shopping { background: var(--c-shopping-bg); color: var(--c-shopping-fg); }
+.c-health { background: var(--c-health-bg); color: var(--c-health-fg); }
+.side { display: flex; align-items: center; justify-content: space-between; gap: 10px; white-space: nowrap; border-radius: 10px; padding: 8px 12px; font-size: 14px; font-weight: 500; }
+.side[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.side .cnt { font-size: 12px; opacity: .75; }
+.date-in { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 1px 6px; font-size: 12px; font-family: inherit; }
+.nowrap-scroll { scrollbar-width: none; }
+.nowrap-scroll::-webkit-scrollbar { display: none; }
