@@ -1,0 +1,11 @@
+# Thai Todo
+
+React + Vite + Tailwind CSS + lucide-react
+
+```bash
+npm install
+npm run dev     # http://localhost:5173
+npm run build   # output in dist/
+```
+
+ข้อมูลเก็บใน React state เท่านั้น (รีเฟรชหน้าแล้วข้อมูลจะรีเซ็ต)
